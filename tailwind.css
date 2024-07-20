@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jaini&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Añadir propiedades CSS personalizadas */
+@property --c-0 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(87.85714285714286, 91%, 23%, 1);
+}
+
+@property --x-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 11%;
+}
+
+@property --y-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 64%;
+}
+
+@property --s-start-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 7%;
+}
+
+@property --s-end-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 75%;
+}
+
+/* Añadir la animación personalizada */
+@keyframes hero-gradient-animation {
+  0% {
+    --c-0: hsla(135.00000000000017, 19%, 11%, 1);
+    --x-0: 4%;
+    --y-0: 56%;
+    --s-start-0: 0%;
+    --s-end-0: 118.9898341656996%;
+  }
+
+  100% {
+    --c-0: hsla(90.00000000000026, 66%, 31%, 1);
+    --x-0: 92%;
+    --y-0: 90%;
+    --s-start-0: 0%;
+    --s-end-0: 100.3587461382177%;
+  }
+}
+
+@property --c-0 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: hsla(135.00000000000017, 19%, 11%, 1);
+}
+
+@property --x-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 4%;
+}
+
+@property --y-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 56%;
+}
+
+@property --s-start-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --s-end-0 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 118.9898341656996%;
+}
+
+.home-green-animation {
+  --c-0: hsla(135.00000000000017, 19%, 11%, 1);
+  --x-0: 4%;
+  --y-0: 56%;
+  background-color: hsla(230, 22%, 8%, 1);
+  background-image: radial-gradient(
+    circle at var(--x-0) var(--y-0),
+    var(--c-0) var(--s-start-0),
+    transparent var(--s-end-0)
+  );
+  animation: hero-gradient-animation 0.5s linear infinite alternate;
+  background-blend-mode: normal;
+}
+
+.text-shadow-lg {
+  text-shadow: 0 0 6px #ffe500;
+}
+
+.text-shadow-bl {
+  text-shadow: 0 0 6px #000000;
+}
+
+.text-shadow-wh {
+  text-shadow: 0 0 8px #ffffff;
+}

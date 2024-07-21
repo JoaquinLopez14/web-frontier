@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes, Router, Link } from "react-router-dom";
-import Home from "./components/home";
-import ViewClan from "./components/clanview";
-import ClanStats from "./components/clanstats";
+import Home from "./home";
+import ViewClan from "./clanview";
+import ClanStats from "./clanstats";
 import "../tailwind.css";
 
 function App() {

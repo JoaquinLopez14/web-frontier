@@ -1,5 +1,5 @@
 import React from "react";
-import HoverImage from "./hoverimage";
+import HoverImage from "./components/hoverimage";
 import { Link } from "react-router-dom";
 
 function ViewClan() {
@@ -9,9 +9,9 @@ function ViewClan() {
         Miembros
       </h1>
       <Link to="/">
-        <button className=" absolute top-4 left-4 w-40 h-10 bg-gray-400 text-black text-1xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black">
+        <button className="absolute top-4 left-4 w-14 h-10 bg-gray-400 text-black text-2xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black flex justify-center">
           {" "}
-          ← Volver atras{" "}
+          ←
         </button>
       </Link>
       <Link to="/view-clan-stats">
@@ -23,102 +23,90 @@ function ViewClan() {
       <HoverImage
         range="Comandante En Jefe"
         name="GhostOfThao"
-        image="../public/thao.png"
+        image="/thao.png"
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Comandante Principal"
           name="Jikushikarinki"
-          image="../public/jiku.png"
+          image="/jiku.png"
         />
         <HoverImage
           range="Comandante Principal"
           name="Gonzalob13"
-          image="../public/gonza.png"
+          image="/gonza.png"
         />
       </div>
       <HoverImage
         range="Incursor Especialista"
         name="Alestar"
-        image="../public/alestar.png"
+        image="/alestar.png"
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Explorador Veterano"
           name="Coffeeboss"
-          image="../public/coffeboss.png"
+          image="/coffeboss.png"
         />
         <HoverImage
           range="Explorador Veterano"
           name="Rapacious"
-          image="../public/rapacious.png"
+          image="/rapacious.png"
         />
       </div>
       <div className="flex flex-wrap justify-center mb-80">
         <HoverImage
           range="Novato Saqueador"
           name="Leatherface565"
-          image="../public/leatherface.png"
+          image="/leatherface.png"
         />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Kleotkz"
-          image="../public/kleo.png"
-        />
+        <HoverImage range="Novato Saqueador" name="Kleotkz" image="/kleo.png" />
         <HoverImage
           range="Novato Saqueador"
           name="JockeyPlazaaaaaa"
-          image="../public/jockey.png"
+          image="/jockey.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="inplay"
-          image="../public/inplay.png"
+          image="/inplay.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Kardia Pc"
-          image="../public/kardia.png"
+          image="/kardia.png"
         />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Sugah"
-          image="../public/sugah.png"
-        />
+        <HoverImage range="Novato Saqueador" name="Sugah" image="/sugah.png" />
         <HoverImage
           range="Novato Saqueador"
           name="JinxAcro"
-          image="../public/jinx.png"
+          image="/jinx.png"
         />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Jaya"
-          image="../public/jaya.png"
-        />
+        <HoverImage range="Novato Saqueador" name="Jaya" image="/jaya.png" />
         <HoverImage
           range="Novato Saqueador"
           name="Miss Drahota"
-          image="../public/drahota.png"
+          image="/drahota.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Zusuki"
-          image="../public/zusuki.png"
+          image="/zusuki.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Berkut"
-          image="../public/berkut.png"
+          image="/berkut.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="ravenhard"
-          image="../public/ravenhard.png"
+          image="/ravenhard.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="CaptainCupQuakes"
-          image="../public/captain.png"
+          image="/captain.png"
         />
       </div>
     </section>

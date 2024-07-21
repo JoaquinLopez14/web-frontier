@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "./tablestats";
+import Table from "./components/tablestats";
 import { Link } from "react-router-dom";
 
 function ClanStats() {

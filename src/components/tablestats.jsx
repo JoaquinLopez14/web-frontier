@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import members from "/members.json";
+import { parse } from "postcss";
 
 function Table() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,8 +13,12 @@ function Table() {
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const parseNumber = (numberString) => {
+    return parseInt(numberString.replace(/[^0-9]/g, ""), 10);
+  };
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col items-center min-h-screen mb-96">
       <input
         type="text"
         placeholder="Buscar"
@@ -21,25 +26,25 @@ function Table() {
         onChange={handleSearchName}
         className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded"
       />
-      <table className="w-full">
+      <table className="w-auto mr-20 ml-20">
         <thead>
           <tr>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-5">
               Name
             </th>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[5%]">
               Level
             </th>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[20%]">
               Rank
             </th>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[15%]">
               Profession
             </th>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[20%]">
               All Time TS
             </th>
-            <th className="py-4 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[15%]">
               All Time Loots
             </th>
           </tr>
@@ -60,18 +65,16 @@ function Table() {
                 {member.profession}
               </td>
               <td
-                className={`text-white text-center py-2 text-2xl border-b-white border-b-2 px-4 ${
-                  parseInt(member.allTimeTs.replace(/[^0-9]/g, ""), 10) >
-                  500000000
-                    ? "text-green-700 text-shadow-bl"
+                className={`text-white text-center py-6 text-2xl border-b-white border-b-2 px-4 ${
+                  parseNumber(member.allTimeTs) > 500000000
+                    ? "text-green-400 text-shadow-bl"
                     : "text-white"
                 }`}>
                 {member.allTimeTs}
               </td>
               <td
-                className={`text-white text-center py-2 text-2xl border-b-white border-b-2 px-4 ${
-                  parseInt(member.allTimeLoots.replace(/[^0-9]/g, ""), 10) >
-                  100000
+                className={`text-white text-center py-6 text-2xl border-b-white border-b-2 px-4 ${
+                  parseNumber(member.allTimeLoots) > 100000
                     ? "text-yellow-300 text-shadow-bl"
                     : "text-white"
                 }`}>

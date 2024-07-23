@@ -1,5 +1,5 @@
 import React from "react";
-import fullFrame from "/full_frame.png";
+import fullFrame from "../public/full_frame.png";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -43,7 +43,7 @@ function Home() {
           Es De Chill Bro
         </h1>
         <img
-          src="clan2.png"
+          src="FRONTEND/public/clan2.png"
           className="w-1/3 absolute bottom-[15%] left-1/2 transform -translate-x-1/2"></img>
       </div>
       <h3 className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-center font-bold text-red-800 text-[7px] pr-2 sm:text-[10px] md:text-[15px] xl:pb-1 xl:pr-4">

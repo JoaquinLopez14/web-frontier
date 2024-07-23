@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import members from "/members.json";
-import { parse } from "postcss";
 
 function Table() {
   const [searchTerm, setSearchTerm] = useState("");

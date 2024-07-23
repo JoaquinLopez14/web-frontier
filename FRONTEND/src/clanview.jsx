@@ -23,90 +23,102 @@ function ViewClan() {
       <HoverImage
         range="Comandante En Jefe"
         name="GhostOfThao"
-        image="/thao.png"
+        image="FRONTEND/public/thao.png"
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Comandante Principal"
           name="Jikushikarinki"
-          image="/jiku.png"
+          image="FRONTEND/public/jiku.png"
         />
         <HoverImage
           range="Comandante Principal"
           name="Gonzalob13"
-          image="/gonza.png"
+          image="FRONTEND/public/gonza.png"
         />
       </div>
       <HoverImage
         range="Incursor Especialista"
         name="Alestar"
-        image="/alestar.png"
+        image="FRONTEND/public/alestar.png"
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Explorador Veterano"
           name="Coffeeboss"
-          image="/coffeboss.png"
+          image="FRONTEND/public/coffeboss.png"
         />
         <HoverImage
           range="Explorador Veterano"
           name="Rapacious"
-          image="/rapacious.png"
+          image="FRONTEND/public/rapacious.png"
         />
       </div>
       <div className="flex flex-wrap justify-center mb-80">
         <HoverImage
           range="Novato Saqueador"
           name="Leatherface565"
-          image="/leatherface.png"
+          image="FRONTEND/public/leatherface.png"
         />
-        <HoverImage range="Novato Saqueador" name="Kleotkz" image="/kleo.png" />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Kleotkz"
+          image="FRONTEND/public/kleo.png"
+        />
         <HoverImage
           range="Novato Saqueador"
           name="JockeyPlazaaaaaa"
-          image="/jockey.png"
+          image="FRONTEND/public/jockey.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="inplay"
-          image="/inplay.png"
+          image="FRONTEND/public/inplay.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Kardia Pc"
-          image="/kardia.png"
+          image="FRONTEND/public/kardia.png"
         />
-        <HoverImage range="Novato Saqueador" name="Sugah" image="/sugah.png" />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Sugah"
+          image="FRONTEND/public/sugah.png"
+        />
         <HoverImage
           range="Novato Saqueador"
           name="JinxAcro"
-          image="/jinx.png"
+          image="FRONTEND/public/jinx.png"
         />
-        <HoverImage range="Novato Saqueador" name="Jaya" image="/jaya.png" />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Jaya"
+          image="FRONTEND/public/jaya.png"
+        />
         <HoverImage
           range="Novato Saqueador"
           name="Miss Drahota"
-          image="/drahota.png"
+          image="FRONTEND/public/drahota.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Zusuki"
-          image="/zusuki.png"
+          image="FRONTEND/public/zusuki.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="Berkut"
-          image="/berkut.png"
+          image="FRONTEND/public/berkut.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="ravenhard"
-          image="/ravenhard.png"
+          image="FRONTEND/public/ravenhard.png"
         />
         <HoverImage
           range="Novato Saqueador"
           name="CaptainCupQuakes"
-          image="/captain.png"
+          image="FRONTEND/public/captain.png"
         />
       </div>
     </section>

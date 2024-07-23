@@ -26,25 +26,28 @@ function Table() {
         onChange={handleSearchName}
         className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded"
       />
-      <table className="w-auto mr-20 ml-20">
+      <table className="min-w-96 mr-20 ml-20">
         <thead>
           <tr>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-5">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               Name
             </th>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[5%]">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               Level
             </th>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[20%]">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               Rank
             </th>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[15%]">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               Profession
             </th>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[20%]">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
+              Weekly Loots
+            </th>
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               All Time TS
             </th>
-            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau w-[15%]">
+            <th className="py-2 px-4 text-2xl border-white bg-black text-white text-center font-ysabeau">
               All Time Loots
             </th>
           </tr>
@@ -52,7 +55,7 @@ function Table() {
         <tbody className="">
           {filteredNames.map((member) => (
             <tr key={member.id}>
-              <td className="text-red-500 text-shadow-bl text-center py-6 text-2xl border-b-white border-b-2 px-4">
+              <td className="text-red-500 text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.name}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
@@ -64,12 +67,10 @@ function Table() {
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.profession}
               </td>
-              <td
-                className={`text-white text-center py-6 text-2xl border-b-white border-b-2 px-4 ${
-                  parseNumber(member.allTimeTs) > 500000000
-                    ? "text-green-400 text-shadow-bl"
-                    : "text-white"
-                }`}>
+              <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
+                {member.weeklyLoots}
+              </td>
+              <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.allTimeTs}
               </td>
               <td

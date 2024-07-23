@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 
 function ViewClan() {
   return (
-    <section className="flex flex-col items-center absolute top-0 z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <h1 className="text-black text-center text-6xl text-shadow-wh font-rocksalt mt-10 mb-10">
+    <section className="w-full min-h-screen clanview flex flex-col items-center justify-center">
+      <h1 className="text-black text-center text-4xl sm:text-6xl text-shadow-wh font-rocksalt pt-10">
         Miembros
       </h1>
       <Link to="/">
-        <button className="absolute top-4 left-4 w-14 h-10 bg-gray-400 text-black text-2xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black flex justify-center">
+        <button className="hidden sm:flex absolute top-4 left-4 w-14 h-10 bg-gray-400 text-black text-2xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black justify-center">
           {" "}
           ←
         </button>
       </Link>
       <Link to="/view-clan-stats">
-        <button className="border p-2 rounded-lg bg-black text-white mt-10 mb-10 hover:scale-105 font-ysabeau">
+        <button className="border p-1 w-52 rounded-lg bg-black text-white mt-10 mb-10 hover:scale-105 font-ysabeau">
           {" "}
           ver stats de los miembros
         </button>

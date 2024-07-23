@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section className="flex relative items-center justify-center pt-10 h-screen bg-custom-color bg-custom-gradient animate-hero-gradient-animation">
+    <section className="flex relative items-center justify-center pt-10 w-screen h-screen bg-custom-color bg-custom-gradient animate-hero-gradient-animation">
       <div className="relative ">
         <img src={fullFrame} alt="Frame" className="rounded-xl" />
         <Link to="/view-clan">
@@ -12,9 +12,11 @@ function Home() {
             VER CLAN
           </button>
         </Link>
-        <button className="absolute top-[5%] left-[26%] transform -translate-y-1/2 h-10 text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-          NOSOTROS
-        </button>
+        <Link to="/about-us">
+          <button className="absolute top-[5%] left-[26%] transform -translate-y-1/2 h-10 text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+            NOSOTROS
+          </button>
+        </Link>
         <button className="absolute top-[5%] left-[46%] transform -translate-y-1/2 h-10 text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
           MEDIA
         </button>
@@ -44,7 +46,7 @@ function Home() {
           src="clan2.png"
           className="w-1/3 absolute bottom-[15%] left-1/2 transform -translate-x-1/2"></img>
       </div>
-      <h3 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center font-bold text-red-800 text-[7px] pr-2 sm:text-[10px] md:text-[15px] xl:pb-1 xl:pr-4">
+      <h3 className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-center font-bold text-red-800 text-[7px] pr-2 sm:text-[10px] md:text-[15px] xl:pb-1 xl:pr-4">
         Since: 01/30/2023
       </h3>
     </section>

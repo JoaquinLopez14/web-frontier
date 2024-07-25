@@ -4,18 +4,41 @@ import { fetchUsers } from "../../../BACKEND/api";
 function Table() {
   const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
     const loadData = async () => {
       try {
         const userData = await fetchUsers();
         setMembers(userData);
+
+        const nextUpdate = 60000;
+        setTimer(nextUpdate);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+    const timerInterval = setInterval(() => {
+      setTimer((prevTimer) => {
+        if (prevTimer <= 1000) {
+          loadData();
+          return 60000;
+        }
+        return prevTimer - 1000;
+      });
+    }, 1000);
+
     loadData();
+
+    return () => clearInterval(timerInterval);
   }, []);
+
+  const formatTime = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
 
   const handleSearchName = (event) => {
     setSearchTerm(event.target.value);
@@ -38,6 +61,9 @@ function Table() {
         onChange={handleSearchName}
         className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded text-black"
       />
+      <div className="text-white text-center mb-4">
+        Actualizacion de weekly loots en: {formatTime(timer)}
+      </div>
       <table className="min-w-96 mr-20 ml-20">
         <thead>
           <tr>

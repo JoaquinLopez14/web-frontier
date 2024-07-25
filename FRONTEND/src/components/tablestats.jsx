@@ -1,42 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { fetchUsers } from "../../../BACKEND/api";
-import axios from "axios";
 
 function Table() {
-  const [searchTerm, setSearchTerm] = useState("");
   const [members, setMembers] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const fetchMembers = async () => {
+    const loadData = async () => {
       try {
-        const membersData = await fetchUsers();
-        setMembers(membersData);
+        const userData = await fetchUsers();
+        setMembers(userData);
       } catch (error) {
-        console.error("Error fetching members:", error);
+        console.error("Error fetching data:", error);
       }
     };
-
-    const fetchLastUpdate = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/last_update");
-        const lastupdate = response.data.lastUpdate;
-        const nextUpdate = lastupdate + 3600000;
-        const now = Date.now();
-        const timeUntilNextUpdate = Math.max(0, (nextUpdate - now) / 1000);
-        setTimeLeft(timeUntilNextUpdate);
-      } catch (error) {
-        console.error("Error fetching last update:", error);
-      }
-    };
-    fetchMembers();
-    fetchLastUpdate();
-
-    const intervalId = setInterval(() => {
-      setTimeLeft((prevTimeLeft) => (prevTimeLeft > 1 ? prevTimeLeft - 1 : 60));
-    }, 1000);
-
-    return () => clearInterval(intervalId);
+    loadData();
   }, []);
 
   const handleSearchName = (event) => {
@@ -58,11 +36,8 @@ function Table() {
         placeholder="Buscar"
         value={searchTerm}
         onChange={handleSearchName}
-        className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded"
+        className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded text-black"
       />
-      <div className="text-white text-center mb-4">
-        Actualizacion de weekly loots en: {Math.floor(timeLeft)} segundos
-      </div>
       <table className="min-w-96 mr-20 ml-20">
         <thead>
           <tr>

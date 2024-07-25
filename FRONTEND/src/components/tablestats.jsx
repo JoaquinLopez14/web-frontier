@@ -1,15 +1,50 @@
-import React, { useState } from "react";
-import members from "/members.json";
+import React, { useEffect, useState } from "react";
+import { fetchUsers } from "../../../BACKEND/api";
+import axios from "axios";
 
 function Table() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [members, setMembers] = useState([]);
+  const [timeLeft, setTimeLeft] = useState(60);
+
+  useEffect(() => {
+    const fetchMembers = async () => {
+      try {
+        const membersData = await fetchUsers();
+        setMembers(membersData);
+      } catch (error) {
+        console.error("Error fetching members:", error);
+      }
+    };
+
+    const fetchLastUpdate = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/last_update");
+        const lastupdate = response.data.lastUpdate;
+        const nextUpdate = lastupdate + 3600000;
+        const now = Date.now();
+        const timeUntilNextUpdate = Math.max(0, (nextUpdate - now) / 1000);
+        setTimeLeft(timeUntilNextUpdate);
+      } catch (error) {
+        console.error("Error fetching last update:", error);
+      }
+    };
+    fetchMembers();
+    fetchLastUpdate();
+
+    const intervalId = setInterval(() => {
+      setTimeLeft((prevTimeLeft) => (prevTimeLeft > 1 ? prevTimeLeft - 1 : 60));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleSearchName = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const filteredNames = members.filter((member) =>
-    member.name.toLowerCase().includes(searchTerm.toLowerCase())
+    member.ign.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const parseNumber = (numberString) => {
@@ -25,6 +60,9 @@ function Table() {
         onChange={handleSearchName}
         className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded"
       />
+      <div className="text-white text-center mb-4">
+        Actualizacion de weekly loots en: {Math.floor(timeLeft)} segundos
+      </div>
       <table className="min-w-96 mr-20 ml-20">
         <thead>
           <tr>
@@ -53,21 +91,21 @@ function Table() {
         </thead>
         <tbody className="">
           {filteredNames.map((member) => (
-            <tr key={member.id}>
+            <tr key={member.user_id}>
               <td className="text-red-500 text-center py-6 text-2xl border-b-white border-b-2 px-4">
-                {member.name}
+                {member.ign}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.level}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
-                {member.rank}
+                {member.ranking}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.profession}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
-                {member.weeklyLoots}
+                {member.weekly_loots}
               </td>
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.allTimeTs}

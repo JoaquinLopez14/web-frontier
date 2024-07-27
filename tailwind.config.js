@@ -6,6 +6,7 @@ export default {
       rocksalt: ["Rock Salt", "cursive"],
       jaini: ["Jaini", "system-ui"],
       ysabeau: ["Ysabeau SC", "sans-serif"],
+      montserrat: ["Montserrat", "sans-serif"],
     },
     extend: {
       keyframes: {
@@ -25,18 +26,6 @@ export default {
             "--s-end-0": "53.33023371526758%",
           },
         },
-      },
-      animation: {
-        "hero-gradient-animation":
-          "hero-gradient-animation 3s linear infinite alternate",
-      },
-      backgroundImage: {
-        "custom-gradient": `
-          radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0))
-        `,
-      },
-      backgroundColor: {
-        "custom-color": "hsla(0, 0%, 0%, 1)",
       },
     },
   },

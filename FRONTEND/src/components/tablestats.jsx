@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { fetchUsers } from "../../../BACKEND/api";
+import axios from "axios";
 
 function Table() {
   const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [timer, setTimer] = useState(0);
+  const [lastUpdate, setLastUpdate] = useState(null);
+  const [nextUpdate, setNextUpdate] = useState(null);
 
   useEffect(() => {
-    const loadData = async () => {
+    const updateData = async () => {
       try {
         const userData = await fetchUsers();
         setMembers(userData);
+        try {
+          const response = await axios.get("http://localhost:3000/last_update");
+          const lastUpdateTimestamp = response.data?.lastUpdate;
+          if (lastUpdateTimestamp) {
+            const lastUpdateDate = new Date(lastUpdateTimestamp);
+            setLastUpdate(lastUpdateDate.toLocaleTimeString());
 
-        const nextUpdate = 60000;
-        setTimer(nextUpdate);
+            const nextUpdateDate = new Date(lastUpdateDate.getTime() + 3600000);
+            setNextUpdate(nextUpdateDate.toLocaleTimeString());
+          } else {
+            console.error("No lastUpdate property in response");
+          }
+        } catch (error) {
+          console.error("Error fetching last update:", error);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-    const timerInterval = setInterval(() => {
-      setTimer((prevTimer) => {
-        if (prevTimer <= 1000) {
-          loadData();
-          return 60000;
-        }
-        return prevTimer - 1000;
-      });
-    }, 1000);
 
-    loadData();
+    updateData();
 
-    return () => clearInterval(timerInterval);
+    const intervalId = setInterval(updateData, 3600000);
+
+    return () => clearInterval(intervalId);
   }, []);
-
-  const formatTime = (ms) => {
-    const totalSeconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-  };
 
   const handleSearchName = (event) => {
     setSearchTerm(event.target.value);
@@ -49,20 +49,32 @@ function Table() {
   );
 
   const parseNumber = (numberString) => {
-    return parseInt(numberString.replace(/[^0-9]/g, ""), 10);
+    return parseInt(String(numberString).replace(/[^0-9]/g, ""), 10);
   };
+
+  const totalLoots = useMemo(() => {
+    return members.reduce((total, member) => {
+      return total + parseNumber(member.weekly_loots);
+    }, 0);
+  }, [members]);
 
   return (
     <div className="flex flex-col items-center min-h-screen mb-96">
-      <input
-        type="text"
-        placeholder="Buscar"
-        value={searchTerm}
-        onChange={handleSearchName}
-        className="w-52 mt-20 mb-4 ml-20 p-2 border-2 border-black rounded text-black"
-      />
-      <div className="text-white text-center mb-4">
-        Actualizacion de weekly loots en: {formatTime(timer)}
+      <div className="flex gap-20 items-center justify-center mt-10 mb-5">
+        <div className="text-emerald-400 text-2xl text-center p-4 font-montserrat">
+          Total Weekly Loots = {totalLoots}
+        </div>
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={searchTerm}
+          onChange={handleSearchName}
+          className="w-72 p-1 border-2 text-1xl border-black rounded text-black"
+        />
+        <div className="text-white text-center text-2xl p-4 font-montserrat">
+          Última actualización: {lastUpdate || "Cargando..."} <br></br>
+          Siguiente actualización: {nextUpdate || "Cargando..."}
+        </div>
       </div>
       <table className="min-w-96 mr-20 ml-20">
         <thead>
@@ -90,7 +102,7 @@ function Table() {
             </th>
           </tr>
         </thead>
-        <tbody className="">
+        <tbody>
           {filteredNames.map((member) => (
             <tr key={member.user_id}>
               <td className="text-red-500 text-center py-6 text-2xl border-b-white border-b-2 px-4">
@@ -111,12 +123,7 @@ function Table() {
               <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.allTimeTs}
               </td>
-              <td
-                className={`text-white text-center py-6 text-2xl border-b-white border-b-2 px-4 ${
-                  parseNumber(member.allTimeLoots) > 100000
-                    ? "text-yellow-300 text-shadow-bl"
-                    : "text-white"
-                }`}>
+              <td className="text-white text-center py-6 text-2xl border-b-white border-b-2 px-4">
                 {member.allTimeLoots}
               </td>
             </tr>

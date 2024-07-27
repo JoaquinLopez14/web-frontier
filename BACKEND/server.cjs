@@ -3,14 +3,14 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const axios = require("axios");
-
+const connection = require("./db.cjs");
 const app = express();
 const port = process.env.PORT || 3000;
-const connection = require("./db.cjs");
-const updateInterval = 60000;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "dist")));
+
+let lastUpdate = Date.now();
 
 app.get("/user_data", async (req, res) => {
   try {
@@ -23,61 +23,56 @@ app.get("/user_data", async (req, res) => {
   }
 });
 
-// Funcion para obtener los weekly loots del enlance ---------------------------------------------------
+// Función para obtener los weekly loots del enlace
 const catchWeeklyLoots = async (userID) => {
   try {
     const response = await axios.get(
       `https://fairview.deadfrontier.com/onlinezombiemmo/get_values.php?userID=${userID}`
     );
     const data = response.data;
-    const weeklyLoots = data.match(/df_loots_weekly=(\d+)/)[1];
-    return weeklyLoots;
+    const match = data.match(/df_loots_weekly=(\d+)/);
+    if (match) {
+      return match[1];
+    } else {
+      throw new Error("Weekly loots not found in response");
+    }
   } catch (error) {
     console.error("Error fetching weekly loots:", error);
     throw error;
   }
 };
 
-app.get("/update-weekly-loots", async (req, res) => {
+const updateWeeklyLoots = async () => {
   try {
-    connection.query(
-      "SELECT user_id FROM user_data",
-      async (error, results) => {
-        if (error) {
-          res.status(500).send(error);
-        } else {
-          for (const user of results) {
-            const weeklyLoots = await catchWeeklyLoots(user.user_id);
-            connection.query(
-              "UPDATE user_data SET weekly_loots = ? WHERE user_id = ?",
-              [weeklyLoots, user.user_id],
-              (err) => {
-                if (err) {
-                  console.error(
-                    `Error updating weekly loots for user ${user.user_id}:`,
-                    err
-                  );
-                }
-              }
-            );
-          }
-          res.send("Weekly loots updated");
-        }
+    const [results] = await connection
+      .promise()
+      .query("SELECT user_id FROM user_data");
+    const updatePromises = results.map(async (user) => {
+      try {
+        const weeklyLoots = await catchWeeklyLoots(user.user_id);
+        await connection
+          .promise()
+          .query("UPDATE user_data SET weekly_loots = ? WHERE user_id = ?", [
+            weeklyLoots,
+            user.user_id,
+          ]);
+      } catch (error) {
+        console.error(`Error updating user ${user.user_id}:`, error);
       }
-    );
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-setInterval(async () => {
-  try {
-    await axios.get("http://localhost:3000/update-weekly-loots");
-    console.log("Weekly loots updated correctly");
+    });
+    await Promise.all(updatePromises);
+    lastUpdate = Date.now();
+    console.log("Weekly loots updated");
   } catch (error) {
     console.error("Error updating weekly loots:", error);
   }
-}, updateInterval);
+};
+
+setInterval(updateWeeklyLoots, 3600000);
+
+app.get("/last_update", (req, res) => {
+  res.json({ lastUpdate: new Date(lastUpdate).toISOString() });
+});
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

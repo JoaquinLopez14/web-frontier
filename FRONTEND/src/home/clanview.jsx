@@ -1,22 +1,15 @@
 import React from "react";
-import HoverImage from "./components/hoverimage";
+import HoverImage from "../components/hoverimage";
 import { Link } from "react-router-dom";
 
 function ViewClan() {
   return (
-    <section className="w-full min-h-screen clanview flex flex-col items-center justify-center">
-      <h1 className="text-black text-center text-4xl sm:text-6xl text-shadow-wh font-rocksalt pt-10">
+    <section className="w-full overflow-hidden bg-green-black flex flex-col items-center justify-center">
+      <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
         Miembros
       </h1>
-      <Link to="/">
-        <button className="hidden sm:flex absolute top-4 left-4 w-14 h-10 bg-gray-400 text-black text-2xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black justify-center">
-          {" "}
-          ←
-        </button>
-      </Link>
       <Link to="/view-clan-stats">
         <button className="border p-1 w-52 rounded-lg bg-black text-white mt-10 mb-10 hover:scale-105 font-ysabeau">
-          {" "}
           ver stats de los miembros
         </button>
       </Link>

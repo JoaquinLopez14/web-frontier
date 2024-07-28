@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -7,14 +8,38 @@ function Form() {
     country: "",
     lenguage: "",
   });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3000/submit-form", formData)
+      .then((response) => {
+        alert("Formulario enviado exitosamente");
+      })
+      .catch((error) => {
+        console.error("Error al enviar el formulario:", error);
+        alert("Error enviando el formulario");
+      });
+  };
+
   return (
-    <form className="text-black">
+    <form className="text-black" onSubmit={handleSubmit}>
       <div className="p-4">
         <input
           type="text"
-          id="name"
-          name="name"
+          id="ign"
+          name="ign"
           placeholder="IGN"
+          value={formData.ign}
+          onChange={handleChange}
           className="text-center p-1"
         />
       </div>
@@ -23,6 +48,8 @@ function Form() {
           type="text"
           name="dfprofiler"
           placeholder="DF Profiler Link"
+          value={formData.dfprofiler}
+          onChange={handleChange}
           className="p-1 text-center w-[400px]"
         />
       </div>
@@ -30,15 +57,19 @@ function Form() {
         <input
           type="text"
           name="country"
-          placeholder="Pais"
+          placeholder="Pais (residencia actual)"
+          value={formData.country}
+          onChange={handleChange}
           className="p-1 text-center"
         />
       </div>
       <div className="p-4">
         <input
           type="text"
-          name="lenguaje"
-          placeholder="Lenguaje/s"
+          name="lenguage"
+          placeholder="Lenguaje dominante (solo uno)"
+          value={formData.lenguage}
+          onChange={handleChange}
           className="p-1 text-center"
         />
       </div>

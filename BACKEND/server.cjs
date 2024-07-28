@@ -9,6 +9,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "dist")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 let lastUpdate = Date.now();
 
@@ -20,6 +22,24 @@ app.get("/user_data", async (req, res) => {
     res.json(results);
   } catch (error) {
     res.status(500).send(error);
+  }
+});
+
+// Ruta para manejar el envio de datos del formulario
+
+app.post("/submit-form", async (req, res) => {
+  const { ign, dfprofiler, country, lenguage } = req.body;
+  const query =
+    "INSERT INTO form_data (ign, df_profiler, country, lenguage) VALUES (?, ?, ?, ?)";
+
+  try {
+    await connection
+      .promise()
+      .query(query, [ign, dfprofiler, country, lenguage]);
+    res.send("Formulario enviado exitosamente");
+  } catch (error) {
+    console.error("Error ejecutando la consulta:", error);
+    res.status(500).send("Error al enviar el formulario");
   }
 });
 

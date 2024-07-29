@@ -2,6 +2,26 @@ import React from "react";
 import HoverImage from "../components/hoverimage";
 import { Link } from "react-router-dom";
 
+import thaoImage from "../assets/thao.png";
+import jikuImage from "../assets/jiku.png";
+import gonzaImage from "../assets/gonza.png";
+import alestarImage from "../assets/alestar.png";
+import coffeeImage from "../assets/coffeboss.png";
+import rapaciousImage from "../assets/rapacious.png";
+import leatherfaceImage from "../assets/leatherface.png";
+import kleotkzImage from "../assets/kleo.png";
+import jockeyImage from "../assets/jockey.png";
+import inplayImage from "../assets/inplay.png";
+import kardiaImage from "../assets/kardia.png";
+import sugahImage from "../assets/sugah.png";
+import jinxImage from "../assets/jinx.png";
+import jayaImage from "../assets/jaya.png";
+import drahotaImage from "../assets/drahota.png";
+import zusukiImage from "../assets/zusuki.png";
+import berkutImage from "../assets/berkut.png";
+import ravenhardImage from "../assets/ravenhard.png";
+import captainImage from "../assets/captain.png";
+
 function ViewClan() {
   return (
     <section className="w-full overflow-hidden bg-green-black flex flex-col items-center justify-center">
@@ -16,102 +36,94 @@ function ViewClan() {
       <HoverImage
         range="Comandante En Jefe"
         name="GhostOfThao"
-        image="FRONTEND/public/thao.png"
+        image={thaoImage}
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Comandante Principal"
           name="Jikushikarinki"
-          image="FRONTEND/public/jiku.png"
+          image={jikuImage}
         />
         <HoverImage
           range="Comandante Principal"
           name="Gonzalob13"
-          image="FRONTEND/public/gonza.png"
+          image={gonzaImage}
         />
       </div>
       <HoverImage
         range="Incursor Especialista"
         name="Alestar"
-        image="FRONTEND/public/alestar.png"
+        image={alestarImage}
       />
       <div className="flex flex-wrap justify-center">
         <HoverImage
           range="Explorador Veterano"
           name="Coffeeboss"
-          image="FRONTEND/public/coffeboss.png"
+          image={coffeeImage}
         />
         <HoverImage
           range="Explorador Veterano"
           name="Rapacious"
-          image="FRONTEND/public/rapacious.png"
+          image={rapaciousImage}
         />
       </div>
       <div className="flex flex-wrap justify-center mb-80">
         <HoverImage
           range="Novato Saqueador"
           name="Leatherface565"
-          image="FRONTEND/public/leatherface.png"
+          image={leatherfaceImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="Kleotkz"
-          image="FRONTEND/public/kleo.png"
+          image={kleotkzImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="JockeyPlazaaaaaa"
-          image="FRONTEND/public/jockey.png"
+          image={jockeyImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="inplay"
-          image="FRONTEND/public/inplay.png"
+          image={inplayImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="Kardia Pc"
-          image="FRONTEND/public/kardia.png"
+          image={kardiaImage}
         />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Sugah"
-          image="FRONTEND/public/sugah.png"
-        />
+        <HoverImage range="Novato Saqueador" name="Sugah" image={sugahImage} />
         <HoverImage
           range="Novato Saqueador"
           name="JinxAcro"
-          image="FRONTEND/public/jinx.png"
+          image={jinxImage}
         />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Jaya"
-          image="FRONTEND/public/jaya.png"
-        />
+        <HoverImage range="Novato Saqueador" name="Jaya" image={jayaImage} />
         <HoverImage
           range="Novato Saqueador"
           name="Miss Drahota"
-          image="FRONTEND/public/drahota.png"
+          image={drahotaImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="Zusuki"
-          image="FRONTEND/public/zusuki.png"
+          image={zusukiImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="Berkut"
-          image="FRONTEND/public/berkut.png"
+          image={berkutImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="ravenhard"
-          image="FRONTEND/public/ravenhard.png"
+          image={ravenhardImage}
         />
         <HoverImage
           range="Novato Saqueador"
           name="CaptainCupQuakes"
-          image="FRONTEND/public/captain.png"
+          image={captainImage}
         />
       </div>
     </section>

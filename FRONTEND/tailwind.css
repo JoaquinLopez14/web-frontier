@@ -86,7 +86,7 @@
 }
 
 .hero-section {
-  background: url("/FRONTEND/public/backgrounds/bg-home.jpg") no-repeat center
-    center fixed;
+  background: url("/FRONTEND/src/assets/backgrounds/bg-home.jpg") no-repeat
+    center center fixed;
   background-size: cover;
 }

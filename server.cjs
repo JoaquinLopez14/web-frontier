@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT;
 
 const corsOptions = {
-  origin: "https://esdechillbro.netlify.app/",
+  origin: "https://esdechillbro.netlify.app",
   optionsSuccessStatus: 200,
 };
 

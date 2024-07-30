@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -17,21 +16,8 @@ function Form() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:3000/submit-form", formData)
-      .then((response) => {
-        alert("Formulario enviado exitosamente");
-      })
-      .catch((error) => {
-        console.error("Error al enviar el formulario:", error);
-        alert("Error enviando el formulario");
-      });
-  };
-
   return (
-    <form className="text-black" onSubmit={handleSubmit}>
+    <form className="text-black">
       <div className="p-4">
         <input
           type="text"

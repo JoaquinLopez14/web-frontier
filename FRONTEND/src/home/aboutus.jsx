@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function AboutUs() {
   return (
     <section className="h-screen bg-green">
-      <div className="flex flex-col items-center p-10">
+      <div className="flex flex-col items-center p-1">
         <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
           Descripción del Clan
         </h1>
@@ -22,9 +22,9 @@ function AboutUs() {
           son implantes gratuitos.
         </h2>
       </div>
-      <div className="flex flex-wrap gap-20 justify-center items-center mt-20 lg:mt-24">
-        <div className="flex flex-col items-center text-center mb-32">
-          <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-10">
+      <div className="flex flex-col gap-2 justify-center items-center mt-2 lg:mt-24 lg:flex-row lg:gap-20">
+        <div className="flex flex-col items-center text-center mt-10 mb-10 lg:mb-44">
+          <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-2 lg:mb-10">
             Boosts
           </h2>
           <h3 className="text-white font-ysabeau text-shadow-wh text-sm lg:text-2xl">
@@ -39,7 +39,7 @@ function AboutUs() {
           </h3>
         </div>
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-10">
+          <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-2 lg:mb-10">
             Estadísticas
           </h2>
           <h3 className="text-yellow-300 font-ysabeau text-sm lg:text-2xl">

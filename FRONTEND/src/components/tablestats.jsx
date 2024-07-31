@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import member from "../../../members.json";
+import Integrantes from "../../../members.json";
 
 function Table() {
   const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    setMembers(member);
+    setMembers(Integrantes);
   });
+
+  useEffect(() => {
+    autoUpdateWeeklyLoots();
+  }, []);
 
   const handleSearchName = (event) => {
     setSearchTerm(event.target.value);

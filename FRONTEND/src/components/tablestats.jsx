@@ -9,10 +9,6 @@ function Table() {
     setMembers(Integrantes);
   });
 
-  useEffect(() => {
-    autoUpdateWeeklyLoots();
-  }, []);
-
   const handleSearchName = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -23,7 +19,7 @@ function Table() {
 
   return (
     <div className="flex flex-col items-center min-h-screen mb-96">
-      <div className="flex gap-20 items-center justify-center mt-10 mb-5">
+      <div className="flex gap-20 items-center justify-center mt-10 mb-10">
         <input
           type="text"
           placeholder="Buscar"

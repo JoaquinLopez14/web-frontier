@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -16,8 +17,42 @@ function Form() {
     });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (
+      !formData.ign ||
+      !formData.dfprofiler ||
+      !formData.country ||
+      !formData.lenguage
+    ) {
+      alert("Complete todos los campos");
+      return;
+    }
+
+    const webhookURL =
+      "https://discord.com/api/webhooks/1268208199841091616/MCjqk3QIfNPqoWpT5GulIDkL4eAU9p7TeCbeSXR1Z9zAfLPE8yChxjcZvDTkDNPJdZ8w";
+
+    const payload = {
+      content: `ign: ${formData.ign}\n dfprofiler:${formData.dfprofiler}\n pais: ${formData.country}\n idioma: ${formData.lenguage}`,
+    };
+
+    try {
+      await axios.post(webhookURL, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      alert("Datos enviados a Discord!");
+      setFormData({ ign: "", dfprofiler: "", country: "", lenguage: "" });
+    } catch (error) {
+      console.error("Error enviando el Formulario:", error);
+      alert("Hubo un error al enviar el formulario, intente nuevamente");
+    }
+  };
+
   return (
-    <form className="text-black">
+    <form className="text-black" onSubmit={handleSubmit}>
       <div className="p-4">
         <input
           type="text"
@@ -36,7 +71,7 @@ function Form() {
           placeholder="DF Profiler Link"
           value={formData.dfprofiler}
           onChange={handleChange}
-          className="p-1 text-center w-[400px]"
+          className="p-1 text-center lg:w-[400px]"
         />
       </div>
       <div className="p-4">

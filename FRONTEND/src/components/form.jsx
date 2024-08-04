@@ -7,6 +7,7 @@ function Form() {
     dfprofiler: "",
     country: "",
     lenguage: "",
+    rol: "",
   });
 
   const handleChange = (e) => {
@@ -24,7 +25,8 @@ function Form() {
       !formData.ign ||
       !formData.dfprofiler ||
       !formData.country ||
-      !formData.lenguage
+      !formData.lenguage ||
+      !formData.rol
     ) {
       alert("Complete todos los campos");
       return;
@@ -34,7 +36,7 @@ function Form() {
       "https://discord.com/api/webhooks/1268208199841091616/MCjqk3QIfNPqoWpT5GulIDkL4eAU9p7TeCbeSXR1Z9zAfLPE8yChxjcZvDTkDNPJdZ8w";
 
     const payload = {
-      content: `ign: ${formData.ign}\n dfprofiler:${formData.dfprofiler}\n pais: ${formData.country}\n idioma: ${formData.lenguage}`,
+      content: `ign: ${formData.ign}\n dfprofiler:${formData.dfprofiler}\n pais: ${formData.country}\n idioma: ${formData.lenguage} \n rol: ${formData.rol}`,
     };
 
     try {
@@ -44,7 +46,13 @@ function Form() {
         },
       });
       alert("Datos enviados a Discord!");
-      setFormData({ ign: "", dfprofiler: "", country: "", lenguage: "" });
+      setFormData({
+        ign: "",
+        dfprofiler: "",
+        country: "",
+        lenguage: "",
+        rol: "",
+      });
     } catch (error) {
       console.error("Error enviando el Formulario:", error);
       alert("Hubo un error al enviar el formulario, intente nuevamente");
@@ -81,17 +89,27 @@ function Form() {
           placeholder="Pais (residencia actual)"
           value={formData.country}
           onChange={handleChange}
-          className="p-1 text-center"
+          className="p-1 text-center lg:w-[250px]"
         />
       </div>
       <div className="p-4">
         <input
           type="text"
           name="lenguage"
-          placeholder="Lenguaje dominante (solo uno)"
+          placeholder="Lenguaje Dominante (solo uno)"
           value={formData.lenguage}
           onChange={handleChange}
-          className="p-1 text-center"
+          className="p-1 text-center lg:w-[250px]"
+        />
+      </div>
+      <div className="p-4">
+        <input
+          type="text"
+          name="rol"
+          placeholder="Rol Principal (looter, grinder, pvp)"
+          value={formData.rol}
+          onChange={handleChange}
+          className="p-1 text-center lg:w-[250px]"
         />
       </div>
       <button

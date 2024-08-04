@@ -67,7 +67,7 @@ function Media() {
         <img className="rounded-xl" src={bloodseeker}></img>
         <img className="rounded-xl" src={marauder}></img>
       </div>
-      <div className="w-[40vw] m-auto">
+      <div className="hidden w-[40vw] m-auto lg:block">
         <Galery
           items={images}
           showFullscreenButton={false}

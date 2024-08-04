@@ -2,14 +2,14 @@ import React from "react";
 import Galery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { Link } from "react-router-dom";
-import nighthawk from "../assets/media/1.png";
-import fleshReaver from "../assets/media/2.png";
-import gorespiker from "../assets/media/3.png";
-import scourgeshot from "../assets/media/4.png";
-import warhawk from "../assets/media/5.png";
-import wyvern from "../assets/media/6.png";
-import bloodseeker from "../assets/media/7.png";
-import marauder from "../assets/media/8.png";
+import nighthawk from "../assets/loots/1.png";
+import fleshReaver from "../assets/loots/2.png";
+import gorespiker from "../assets/loots/3.png";
+import scourgeshot from "../assets/loots/4.png";
+import warhawk from "../assets/loots/5.png";
+import wyvern from "../assets/loots/6.png";
+import bloodseeker from "../assets/loots/7.png";
+import marauder from "../assets/loots/8.png";
 
 const images = [
   {

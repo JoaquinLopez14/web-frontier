@@ -2,25 +2,25 @@ import React from "react";
 import HoverImage from "../components/hoverimage";
 import { Link } from "react-router-dom";
 
-import thaoImage from "../assets/thao.png";
-import jikuImage from "../assets/jiku.png";
-import gonzaImage from "../assets/gonza.png";
-import alestarImage from "../assets/alestar.png";
-import coffeeImage from "../assets/coffeboss.png";
-import rapaciousImage from "../assets/rapacious.png";
-import leatherfaceImage from "../assets/leatherface.png";
-import kleotkzImage from "../assets/kleo.png";
-import jockeyImage from "../assets/jockey.png";
-import inplayImage from "../assets/inplay.png";
-import kardiaImage from "../assets/kardia.png";
-import sugahImage from "../assets/sugah.png";
-import jinxImage from "../assets/jinx.png";
-import jayaImage from "../assets/jaya.png";
-import drahotaImage from "../assets/drahota.png";
-import zusukiImage from "../assets/zusuki.png";
-import berkutImage from "../assets/berkut.png";
-import ravenhardImage from "../assets/ravenhard.png";
-import captainImage from "../assets/captain.png";
+import thaoImage from "../assets/dfprofiles/thao.png";
+import jikuImage from "../assets/dfprofiles/jiku.png";
+import gonzaImage from "../assets/dfprofiles/gonza.png";
+import alestarImage from "../assets/dfprofiles/alestar.png";
+import coffeeImage from "../assets/dfprofiles/coffeboss.png";
+import rapaciousImage from "../assets/dfprofiles/rapacious.png";
+import leatherfaceImage from "../assets/dfprofiles/leatherface.png";
+import kleotkzImage from "../assets/dfprofiles/kleo.png";
+import jockeyImage from "../assets/dfprofiles/jockey.png";
+import inplayImage from "../assets/dfprofiles/inplay.png";
+import kardiaImage from "../assets/dfprofiles/kardia.png";
+import sugahImage from "../assets/dfprofiles/sugah.png";
+import jinxImage from "../assets/dfprofiles/jinx.png";
+import jayaImage from "../assets/dfprofiles/jaya.png";
+import drahotaImage from "../assets/dfprofiles/drahota.png";
+import zusukiImage from "../assets/dfprofiles/zusuki.png";
+import berkutImage from "../assets/dfprofiles/berkut.png";
+import ravenhardImage from "../assets/dfprofiles/ravenhard.png";
+import captainImage from "../assets/dfprofiles/captain.png";
 
 function ViewClan() {
   return (

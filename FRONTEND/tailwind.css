@@ -6,31 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.about-us {
-  background-color: hsla(230, 22%, 8%, 1);
-  background-image: radial-gradient(
-    circle at 4% 56%,
-    hsla(135, 19%, 11%, 1) 0%,
-    transparent 118.9898341656996%
-  );
-  background-blend-mode: normal;
-}
-
-.clanview {
-  background-color: hsla(230.14445678633325, 96%, 10%, 1);
-  background-image: radial-gradient(
-      circle at 8% 92%,
-      hsla(135, 0%, 0%, 1) 26.163730179494088%,
-      transparent 106.5480198139221%
-    ),
-    radial-gradient(
-      circle at 84% 77%,
-      hsla(212.3684210526316, 72%, 58%, 1) 29.61523939380595%,
-      transparent 76.14733147389272%
-    );
-  background-blend-mode: normal, normal;
-}
-
 .text-shadow-yl {
   text-shadow: 0 0 10px #ffe500;
 }
@@ -70,24 +45,15 @@
 
 @keyframes typing {
   from {
-    width: 0;
     opacity: 0;
   }
   to {
-    width: 100%;
     opacity: 1;
   }
 }
 
 .typing-text {
-  min-height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 1.5s steps(60) forwards;
+  animation: typing 4s steps(60);
 }
 
 .hero-section {

@@ -1,18 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import ViewClan from "./clanview";
 import AboutUs from "./aboutus";
 
 function Home() {
   const viewClanRef = useRef(null);
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      textRef.current.classList.add("typing-text");
-    }, 500);
-    return () => clearTimeout(timeout);
-  }, []);
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
@@ -45,9 +37,7 @@ function Home() {
           </a>
         </nav>
         <div className="flex justify-center items-center w-screen h-3/4">
-          <h1
-            className="text-center w-screen font-rocksalt text-6xl sm:text-6xl md:text-6xl lg:text-9xl text-black text-shadow-wh"
-            ref={textRef}>
+          <h1 className="typing-text text-center w-screen font-rocksalt text-6xl sm:text-6xl md:text-6xl lg:text-9xl text-black text-shadow-yl">
             Es De Chill Bro
           </h1>
         </div>

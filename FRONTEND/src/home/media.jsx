@@ -49,8 +49,8 @@ function Media() {
   return (
     <section className="w-screen min-h-screen bg-media">
       <Link to="/">
-        <button className="sm:absolute top-10 left-4 w-40 h-10  bg-gray-400 text-black text-1xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black">
-          ← Volver atras
+        <button className="sm:absolute top-10 left-4 w-24 h-10 bg-white text-black text-1xl font-ysabeau rounded-lg border-4 hover:scale-105 border-black">
+          ← Back
         </button>
       </Link>
       <h1 className="text-center text-5xl p-10 font-ysabeau lg:text-7xl">

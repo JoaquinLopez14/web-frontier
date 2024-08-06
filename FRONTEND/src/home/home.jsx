@@ -13,28 +13,30 @@ function Home() {
   return (
     <>
       <section className="w-full h-screen overflow-hidden flex flex-col items-center hero-section">
-        <nav className="w-screen flex justify-end gap-8 p-2 border-b-[1px] bg-gray-950 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
-          <button
-            className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500"
-            onClick={() => scrollToSection(viewClanRef)}>
-            NOSOTROS
-          </button>
-          <Link to="/media">
-            <button className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
-              MEDIA
+        <nav className="w-screen flex justify-end gap-5 p-1 bg-gray-950 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
+          <div className="flex items-center justify-center gap-5 mr-10">
+            <button
+              className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500"
+              onClick={() => scrollToSection(viewClanRef)}>
+              ABOUT US
             </button>
-          </Link>
-          <Link to="/join-us">
-            <button className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
-              UNETE
-            </button>
-          </Link>
-          <a
-            href="https://discord.gg/GQsHnQEQ"
-            target="blank"
-            className="mr-5 text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
-            DISCORD
-          </a>
+            <Link to="/media">
+              <button className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
+                MEDIA
+              </button>
+            </Link>
+            <Link to="/join-us">
+              <button className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
+                JOIN US
+              </button>
+            </Link>
+            <a
+              href="https://discord.gg/GQsHnQEQ"
+              target="blank"
+              className="text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
+              DISCORD
+            </a>
+          </div>
         </nav>
         <div className="flex justify-center items-center w-screen h-3/4">
           <h1 className="typing-text text-center w-screen font-rocksalt text-6xl sm:text-6xl md:text-6xl lg:text-9xl text-black text-shadow-yl">

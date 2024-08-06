@@ -1,25 +1,69 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import eeuu from "../assets/locales/usa.png";
+import spain from "../assets/locales/spain.png";
 
 function AboutUs() {
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const toggleLanguage = () => {
+    setIsEnglish(!isEnglish);
+  };
+
   return (
     <section className="h-screen bg-green">
       <div className="flex flex-col items-center p-1">
         <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
           Descripción del Clan
         </h1>
+        <div className="flex gap-4 mt-10">
+          <img
+            src={spain}
+            alt="Spanish Flag"
+            onClick={() => setIsEnglish(false)}
+            className="w-10 h-10 cursor-pointer"
+          />
+          <img
+            src={eeuu}
+            alt="USA Flag"
+            onClick={() => setIsEnglish(true)}
+            className="w-10 h-10 cursor-pointer"
+          />
+        </div>
         <h2 className="text-center text-white text-sm font-ysabeau mt-10 lg:text-2xl">
-          Buscamos{" "}
-          <em className="text-yellow-300">
-            miembros activos, comprometidos y responsables
-          </em>
-          , que entiendan lo que significa pertenecer a un equipo. <br />{" "}
-          <em className="text-blue-300">Ofrecemos la oportunidad de crecer</em>,
-          tanto en <em className="text-blue-300">habilidad</em>, como en{" "}
-          <em className="text-blue-300">equipamiento</em> en el juego. <br />
-          Contarán también con
-          <em className="text-blue-300"> boosts de clan</em>, que básicamente
-          son implantes gratuitos.
+          {isEnglish ? (
+            <>
+              We are looking for{" "}
+              <em className="text-yellow-300">
+                active, committed, and responsible members
+              </em>
+              , who understand what it means to belong to a team. <br />{" "}
+              <em className="text-blue-300">
+                We offer the opportunity to grow
+              </em>
+              , both in <em className="text-blue-300">skill</em> and{" "}
+              <em className="text-blue-300">equipment</em> in the game. <br />
+              You will also have
+              <em className="text-blue-300"> clan boosts</em>, which are
+              basically free implants.
+            </>
+          ) : (
+            <>
+              Buscamos{" "}
+              <em className="text-yellow-300">
+                miembros activos, comprometidos y responsables
+              </em>
+              , que entiendan lo que significa pertenecer a un equipo. <br />{" "}
+              <em className="text-blue-300">
+                Ofrecemos la oportunidad de crecer
+              </em>
+              , tanto en <em className="text-blue-300">habilidad</em>, como en{" "}
+              <em className="text-blue-300">equipamiento</em> en el juego.{" "}
+              <br />
+              Contarán también con
+              <em className="text-blue-300"> boosts de clan</em>, que
+              básicamente son implantes gratuitos.
+            </>
+          )}
         </h2>
       </div>
       <div className="flex flex-col gap-2 justify-center items-center mt-2 lg:mt-24 lg:flex-row lg:gap-20">

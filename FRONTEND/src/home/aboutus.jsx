@@ -15,7 +15,7 @@ function AboutUs() {
         <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
           Descripción del Clan
         </h1>
-        <div className="flex gap-4 mt-10">
+        <div className="flex gap-4 mt-5">
           <img
             src={spain}
             alt="Spanish Flag"
@@ -29,7 +29,7 @@ function AboutUs() {
             className="w-10 h-10 cursor-pointer"
           />
         </div>
-        <h2 className="text-center text-white text-sm font-ysabeau mt-10 lg:text-2xl">
+        <h2 className="text-center text-white text-sm font-ysabeau mt-5 lg:text-2xl">
           {isEnglish ? (
             <>
               We are looking for{" "}
@@ -66,8 +66,8 @@ function AboutUs() {
           )}
         </h2>
       </div>
-      <div className="flex flex-col gap-2 justify-center items-center mt-2 lg:mt-24 lg:flex-row lg:gap-20">
-        <div className="flex flex-col items-center text-center mt-10 mb-10 lg:mb-44">
+      <div className="flex flex-col gap-10 justify-center items-center mt-2 sm:flex-row sm:mt-5">
+        <div className="flex flex-col items-center text-center">
           <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-2 lg:mb-10">
             Boosts
           </h2>
@@ -82,7 +82,7 @@ function AboutUs() {
             +15% Loot Speed
           </h3>
         </div>
-        <div className="flex flex-col items-center text-center mb-20">
+        <div className="flex flex-col items-center text-center lg:mt-10">
           <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-2 lg:mb-10">
             Estadísticas
           </h2>

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import ViewClan from "./clanview";
 import AboutUs from "./aboutus";
+import Frame from "../assets/frame.png";
 
 function Home() {
   const viewClanRef = useRef(null);
@@ -13,7 +14,7 @@ function Home() {
   return (
     <>
       <section className="w-full h-screen overflow-hidden flex flex-col items-center hero-section">
-        <nav className="w-screen flex justify-end gap-5 p-1 bg-gray-950 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
+        <nav className="w-screen flex justify-end gap-5 p-1 text-xs sm:text-lg md:text-xl lg:text-2xl xl:text-2xl z-10">
           <div className="flex items-center justify-center gap-5 mr-10">
             <button
               className=" text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500"

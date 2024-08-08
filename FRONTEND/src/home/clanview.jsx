@@ -29,7 +29,7 @@ function ViewClan() {
         Miembros
       </h1>
       <Link to="/view-clan-stats">
-        <button className=" border-white border-2 w-48 h-auto p-2 rounded-lg text-xl bg-gray-500 text-black mt-10 mb-10 hover:bg-black hover:text-white duration-500 hover:scale-105 font-montserrat">
+        <button className=" border-white border-2 w-48 h-auto p-2 rounded-lg text-xl bg-black text-white mt-10 mb-10 hover:bg-black hover:text-white duration-500 hover:scale-105 font-montserrat">
           Member Stats
         </button>
       </Link>

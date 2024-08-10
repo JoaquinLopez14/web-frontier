@@ -61,3 +61,9 @@
     center center fixed;
   background-size: cover;
 }
+
+.placeholder-black::placeholder {
+  color: black;
+  font-weight: bolder;
+  opacity: 0.6;
+}

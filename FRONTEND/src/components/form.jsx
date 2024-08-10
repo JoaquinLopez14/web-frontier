@@ -97,7 +97,7 @@ function Form() {
           placeholder="IGN"
           value={formData.ign}
           onChange={handleChange}
-          className="text-center p-1"
+          className="text-center font-ysabeau text-xl font-semibold p-1 placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -107,7 +107,7 @@ function Form() {
           placeholder="DF Profiler Link"
           value={formData.dfprofiler}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[400px]"
+          className="p-1 text-center font-ysabeau text-xl font-semibold lg:w-[500px] placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -117,21 +117,17 @@ function Form() {
           placeholder={isEnglish ? "Country" : "País"}
           value={formData.country}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[250px]"
+          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-semibold placeholder-black"
         />
       </div>
       <div className="p-4">
         <input
           type="text"
           name="lenguage"
-          placeholder={
-            isEnglish
-              ? "Dominant Language (only one)"
-              : "Lenguaje Dominante (solo uno)"
-          }
+          placeholder={isEnglish ? "Dominant Language" : "Lenguaje Dominante"}
           value={formData.lenguage}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[250px]"
+          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-semibold placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -141,11 +137,11 @@ function Form() {
           placeholder={
             isEnglish
               ? "Main Role (looter, grinder, pvp)"
-              : "Rol Principal (looter, grinder, pvp)"
+              : "Rol Principal (looter, grinder, pvp) "
           }
           value={formData.rol}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[250px]"
+          className="p-1 text-center lg:w-[350px] font-ysabeau text-xl font-semibold placeholder-black"
         />
       </div>
       <button

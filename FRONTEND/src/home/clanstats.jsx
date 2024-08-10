@@ -6,7 +6,7 @@ function ClanStats() {
   return (
     <section className="min-w-full min-h-screen absolute top-0 bg-stats">
       <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
-        Estadisticas de los miembros
+        Member Stats
       </h1>
       <div className="flex flex-col gap-2">
         <Link to="/">

@@ -11,7 +11,7 @@ function JoinUs() {
         </button>
       </Link>
       <h1 className="text-center font-rocksalt text-3xl p-10 lg:text-5xl">
-        Unete al clan !
+        Become a member !
       </h1>
       <div className="text-center ">
         <Form />

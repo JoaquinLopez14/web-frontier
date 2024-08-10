@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import ViewClan from "./clanview";
 import AboutUs from "./aboutus";
-import Frame from "../assets/frame.png";
 
 function Home() {
   const viewClanRef = useRef(null);
@@ -32,7 +31,7 @@ function Home() {
               </button>
             </Link>
             <a
-              href="https://discord.gg/GQsHnQEQ"
+              href="https://discord.gg/eHAnFp6JdA"
               target="blank"
               className="text-center justify-center items-center font-jaini text-white hover:text-red-600 transition-all duration-500">
               DISCORD
@@ -45,10 +44,10 @@ function Home() {
           </h1>
         </div>
       </section>
-      <AboutUs />
       <section ref={viewClanRef}>
-        <ViewClan />
+        <AboutUs />
       </section>
+      <ViewClan />
     </>
   );
 }

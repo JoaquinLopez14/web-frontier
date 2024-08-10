@@ -5,15 +5,11 @@ import spain from "../assets/locales/spain.png";
 function AboutUs() {
   const [isEnglish, setIsEnglish] = useState(false);
 
-  const toggleLanguage = () => {
-    setIsEnglish(!isEnglish);
-  };
-
   return (
     <section className="h-screen bg-green">
       <div className="flex flex-col items-center p-1">
         <h1 className="text-center text-4xl font-ysabeau text-white pt-2 lg:text-7xl">
-          Descripción del Clan
+          What We Offer
         </h1>
         <div className="flex gap-4 mt-5">
           <img
@@ -84,7 +80,7 @@ function AboutUs() {
         </div>
         <div className="flex flex-col items-center text-center lg:mt-10">
           <h2 className="text-white font-rocksalt text-xl lg:text-4xl mb-2 lg:mb-10">
-            Estadísticas
+            Stats
           </h2>
           <h3 className="text-yellow-300 font-ysabeau text-sm lg:text-2xl">
             Total Victory Points 4,175 <br />

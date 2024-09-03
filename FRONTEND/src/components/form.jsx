@@ -94,10 +94,12 @@ function Form() {
           type="text"
           id="ign"
           name="ign"
-          placeholder="IGN"
+          placeholder={
+            isEnglish ? "IGN (In Game Name)" : "IGN (Nombre en el juego)"
+          }
           value={formData.ign}
           onChange={handleChange}
-          className="text-center font-ysabeau text-xl font-semibold p-1 placeholder-black"
+          className="text-center font-ysabeau text-xl font-medium p-1 lg:w-[400px] placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -107,7 +109,7 @@ function Form() {
           placeholder="DF Profiler Link"
           value={formData.dfprofiler}
           onChange={handleChange}
-          className="p-1 text-center font-ysabeau text-xl font-semibold lg:w-[500px] placeholder-black"
+          className="p-1 text-center font-ysabeau text-xl font-medium  lg:w-[500px] placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -117,7 +119,7 @@ function Form() {
           placeholder={isEnglish ? "Country" : "País"}
           value={formData.country}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-semibold placeholder-black"
+          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-medium  placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -127,7 +129,7 @@ function Form() {
           placeholder={isEnglish ? "Dominant Language" : "Lenguaje Dominante"}
           value={formData.lenguage}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-semibold placeholder-black"
+          className="p-1 text-center lg:w-[250px] font-ysabeau text-xl font-medium  placeholder-black"
         />
       </div>
       <div className="p-4">
@@ -141,7 +143,7 @@ function Form() {
           }
           value={formData.rol}
           onChange={handleChange}
-          className="p-1 text-center lg:w-[350px] font-ysabeau text-xl font-semibold placeholder-black"
+          className="p-1 text-center lg:w-[350px] font-ysabeau text-xl font-medium  placeholder-black"
         />
       </div>
       <button

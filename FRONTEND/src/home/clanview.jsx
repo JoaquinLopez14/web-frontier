@@ -11,16 +11,21 @@ import rapaciousImage from "../assets/dfprofiles/rapacious.png";
 import leatherfaceImage from "../assets/dfprofiles/leatherface.png";
 import kleotkzImage from "../assets/dfprofiles/kleo.png";
 import jockeyImage from "../assets/dfprofiles/jockey.png";
-import cesarImage from "../assets/dfprofiles/cesarCh.png";
 import kardiaImage from "../assets/dfprofiles/kardia.png";
 import sugahImage from "../assets/dfprofiles/sugah.png";
 import jinxImage from "../assets/dfprofiles/jinx.png";
-import jayaImage from "../assets/dfprofiles/jaya.png";
 import drahotaImage from "../assets/dfprofiles/drahota.png";
-import zusukiImage from "../assets/dfprofiles/zusuki.png";
 import berkutImage from "../assets/dfprofiles/berkut.png";
 import ravenhardImage from "../assets/dfprofiles/ravenhard.png";
-import captainImage from "../assets/dfprofiles/captain.png";
+import coronaImage from "../assets/dfprofiles/coronavirus.png";
+import emonftImage from "../assets/dfprofiles/emonftZilong.png";
+import aezxcImage from "../assets/dfprofiles/aezxc.png";
+import cesarImage from "../assets/dfprofiles/cesarCh.png";
+import joshuaImage from "../assets/dfprofiles/joshua.png";
+import hanselImage from "../assets/dfprofiles/hansel.png";
+import sgtmasterImage from "../assets/dfprofiles/sgtmaster.png";
+import uskayImage from "../assets/dfprofiles/uskay.png";
+import velaskiImage from "../assets/dfprofiles/velaski.png";
 
 function ViewClan() {
   return (
@@ -72,8 +77,74 @@ function ViewClan() {
           image={rapaciousImage}
           link="https://www.dfprofiler.com/profile/view/920684"
         />
+        <HoverImage
+          range="Explorador Veterano"
+          name="JockeyPlazaaaaaa"
+          image={jockeyImage}
+          link="https://www.dfprofiler.com/profile/view/13952709"
+        />
+        <HoverImage
+          range="Explorador Veterano"
+          name="Sugah"
+          image={sugahImage}
+          link="https://www.dfprofiler.com/profile/view/13411586"
+        />
       </div>
       <div className="flex flex-wrap justify-center mb-80">
+        <HoverImage
+          range="Novato Saqueador"
+          name="C O R O N A V I R U S S S"
+          image={coronaImage}
+          link="https://www.dfprofiler.com/profile/view/13936355"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="EmonftZilong"
+          image={emonftImage}
+          link="https://www.dfprofiler.com/profile/view/13712319"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Aezxc"
+          image={aezxcImage}
+          link="https://www.dfprofiler.com/profile/view/13607572"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Cesar Ch"
+          image={cesarImage}
+          link="https://www.dfprofiler.com/profile/view/13519845"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Joshua32"
+          image={joshuaImage}
+          link="https://www.dfprofiler.com/profile/view/12964720"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Wraith Of God"
+          image={hanselImage}
+          link="https://www.dfprofiler.com/profile/view/12771988"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="SGTMaster"
+          image={sgtmasterImage}
+          link="https://www.dfprofiler.com/profile/view/11861003"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="Uskay"
+          image={uskayImage}
+          link="https://www.dfprofiler.com/profile/view/11522506"
+        />
+        <HoverImage
+          range="Novato Saqueador"
+          name="MalandrinhoDos7Mares"
+          image={velaskiImage}
+          link="https://www.dfprofiler.com/profile/view/7295668"
+        />
         <HoverImage
           range="Novato Saqueador"
           name="Leatherface565"
@@ -88,27 +159,9 @@ function ViewClan() {
         />
         <HoverImage
           range="Novato Saqueador"
-          name="JockeyPlazaaaaaa"
-          image={jockeyImage}
-          link="https://www.dfprofiler.com/profile/view/13952709"
-        />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Cesar Ch"
-          image={cesarImage}
-          link="https://www.dfprofiler.com/profile/view/13519845"
-        />
-        <HoverImage
-          range="Novato Saqueador"
           name="Kardia Pc"
           image={kardiaImage}
           link="https://www.dfprofiler.com/profile/view/13427999"
-        />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Sugah"
-          image={sugahImage}
-          link="https://www.dfprofiler.com/profile/view/13411586"
         />
         <HoverImage
           range="Novato Saqueador"
@@ -118,21 +171,9 @@ function ViewClan() {
         />
         <HoverImage
           range="Novato Saqueador"
-          name="Jaya"
-          image={jayaImage}
-          link="https://www.dfprofiler.com/profile/view/13266413"
-        />
-        <HoverImage
-          range="Novato Saqueador"
           name="Miss Drahota"
           image={drahotaImage}
           link="https://www.dfprofiler.com/profile/view/13069560"
-        />
-        <HoverImage
-          range="Novato Saqueador"
-          name="Zusuki"
-          image={zusukiImage}
-          link="https://www.dfprofiler.com/profile/view/12997225"
         />
         <HoverImage
           range="Novato Saqueador"
@@ -145,12 +186,6 @@ function ViewClan() {
           name="ravenhard"
           image={ravenhardImage}
           link="https://www.dfprofiler.com/profile/view/12038649"
-        />
-        <HoverImage
-          range="Novato Saqueador"
-          name="CaptainCupQuakes"
-          image={captainImage}
-          link="https://www.dfprofiler.com/profile/view/8895840"
         />
       </div>
     </section>

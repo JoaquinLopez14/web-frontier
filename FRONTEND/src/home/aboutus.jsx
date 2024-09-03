@@ -89,7 +89,6 @@ function AboutUs() {
             All Time Loots 1,835,757 <br />
             Weekly PvP Points 920 <br />
             Weekly EXP Record 231,449,940 <br />
-            Weekly Loots 22,247
           </h3>
         </div>
       </div>

@@ -48,6 +48,14 @@ function Home() {
         <AboutUs />
       </section>
       <ViewClan />
+      <footer className="bg-black font-montserrat h-12 flex items-center justify-center">
+        Website made by
+        <a
+          href="https://www.dfprofiler.com/profile/view/13536663"
+          target="_blank">
+          <span className="text-red-500 ml-1">CoffeeBoss</span>
+        </a>
+      </footer>
     </>
   );
 }
